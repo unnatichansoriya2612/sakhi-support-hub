@@ -21,6 +21,8 @@ import { Route as ResetPasswordRouteImport } from './routes/reset-password'
 import { Route as SafetyRouteImport } from './routes/safety'
 import { Route as TermsRouteImport } from './routes/terms'
 import { Route as WhatWeOfferRouteImport } from './routes/what-we-offer'
+import { Route as CarePartnersIndexRouteImport } from './routes/care-partners.index'
+import { Route as CarePartnersIdRouteImport } from './routes/care-partners.$id'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -82,6 +84,16 @@ const WhatWeOfferRoute = WhatWeOfferRouteImport.update({
   path: '/what-we-offer',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CarePartnersIndexRoute = CarePartnersIndexRouteImport.update({
+  id: '/care-partners/',
+  path: '/care-partners/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CarePartnersIdRoute = CarePartnersIdRouteImport.update({
+  id: '/care-partners/$id',
+  path: '/care-partners/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -96,6 +108,8 @@ export interface FileRoutesByFullPath {
   '/safety': typeof SafetyRoute
   '/terms': typeof TermsRoute
   '/what-we-offer': typeof WhatWeOfferRoute
+  '/care-partners/$id': typeof CarePartnersIdRoute
+  '/care-partners/': typeof CarePartnersIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -110,6 +124,8 @@ export interface FileRoutesByTo {
   '/safety': typeof SafetyRoute
   '/terms': typeof TermsRoute
   '/what-we-offer': typeof WhatWeOfferRoute
+  '/care-partners/$id': typeof CarePartnersIdRoute
+  '/care-partners': typeof CarePartnersIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -125,6 +141,8 @@ export interface FileRoutesById {
   '/safety': typeof SafetyRoute
   '/terms': typeof TermsRoute
   '/what-we-offer': typeof WhatWeOfferRoute
+  '/care-partners/$id': typeof CarePartnersIdRoute
+  '/care-partners/': typeof CarePartnersIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -141,6 +159,8 @@ export interface FileRouteTypes {
     | '/safety'
     | '/terms'
     | '/what-we-offer'
+    | '/care-partners/$id'
+    | '/care-partners/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -155,6 +175,8 @@ export interface FileRouteTypes {
     | '/safety'
     | '/terms'
     | '/what-we-offer'
+    | '/care-partners/$id'
+    | '/care-partners'
   id:
     | '__root__'
     | '/'
@@ -169,6 +191,8 @@ export interface FileRouteTypes {
     | '/safety'
     | '/terms'
     | '/what-we-offer'
+    | '/care-partners/$id'
+    | '/care-partners/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -184,6 +208,8 @@ export interface RootRouteChildren {
   SafetyRoute: typeof SafetyRoute
   TermsRoute: typeof TermsRoute
   WhatWeOfferRoute: typeof WhatWeOfferRoute
+  CarePartnersIdRoute: typeof CarePartnersIdRoute
+  CarePartnersIndexRoute: typeof CarePartnersIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -272,6 +298,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof WhatWeOfferRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/care-partners/': {
+      id: '/care-partners/'
+      path: '/care-partners'
+      fullPath: '/care-partners/'
+      preLoaderRoute: typeof CarePartnersIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/care-partners/$id': {
+      id: '/care-partners/$id'
+      path: '/care-partners/$id'
+      fullPath: '/care-partners/$id'
+      preLoaderRoute: typeof CarePartnersIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -288,6 +328,8 @@ const rootRouteChildren: RootRouteChildren = {
   SafetyRoute: SafetyRoute,
   TermsRoute: TermsRoute,
   WhatWeOfferRoute: WhatWeOfferRoute,
+  CarePartnersIdRoute: CarePartnersIdRoute,
+  CarePartnersIndexRoute: CarePartnersIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
