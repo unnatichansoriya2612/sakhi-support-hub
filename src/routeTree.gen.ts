@@ -11,8 +11,13 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
+import { Route as BecomeACarePartnerRouteImport } from './routes/become-a-care-partner'
+import { Route as CancellationRouteImport } from './routes/cancellation'
+import { Route as FaqRouteImport } from './routes/faq'
 import { Route as HowItWorksRouteImport } from './routes/how-it-works'
+import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as SafetyRouteImport } from './routes/safety'
+import { Route as TermsRouteImport } from './routes/terms'
 import { Route as WhatWeOfferRouteImport } from './routes/what-we-offer'
 
 const IndexRoute = IndexRouteImport.update({
@@ -25,14 +30,39 @@ const AboutRoute = AboutRouteImport.update({
   path: '/about',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BecomeACarePartnerRoute = BecomeACarePartnerRouteImport.update({
+  id: '/become-a-care-partner',
+  path: '/become-a-care-partner',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CancellationRoute = CancellationRouteImport.update({
+  id: '/cancellation',
+  path: '/cancellation',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FaqRoute = FaqRouteImport.update({
+  id: '/faq',
+  path: '/faq',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const HowItWorksRoute = HowItWorksRouteImport.update({
   id: '/how-it-works',
   path: '/how-it-works',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SafetyRoute = SafetyRouteImport.update({
   id: '/safety',
   path: '/safety',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TermsRoute = TermsRouteImport.update({
+  id: '/terms',
+  path: '/terms',
   getParentRoute: () => rootRouteImport,
 } as any)
 const WhatWeOfferRoute = WhatWeOfferRouteImport.update({
@@ -44,39 +74,89 @@ const WhatWeOfferRoute = WhatWeOfferRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/become-a-care-partner': typeof BecomeACarePartnerRoute
+  '/cancellation': typeof CancellationRoute
+  '/faq': typeof FaqRoute
   '/how-it-works': typeof HowItWorksRoute
+  '/privacy': typeof PrivacyRoute
   '/safety': typeof SafetyRoute
+  '/terms': typeof TermsRoute
   '/what-we-offer': typeof WhatWeOfferRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/become-a-care-partner': typeof BecomeACarePartnerRoute
+  '/cancellation': typeof CancellationRoute
+  '/faq': typeof FaqRoute
   '/how-it-works': typeof HowItWorksRoute
+  '/privacy': typeof PrivacyRoute
   '/safety': typeof SafetyRoute
+  '/terms': typeof TermsRoute
   '/what-we-offer': typeof WhatWeOfferRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/become-a-care-partner': typeof BecomeACarePartnerRoute
+  '/cancellation': typeof CancellationRoute
+  '/faq': typeof FaqRoute
   '/how-it-works': typeof HowItWorksRoute
+  '/privacy': typeof PrivacyRoute
   '/safety': typeof SafetyRoute
+  '/terms': typeof TermsRoute
   '/what-we-offer': typeof WhatWeOfferRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/how-it-works' | '/safety' | '/what-we-offer'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/become-a-care-partner'
+    | '/cancellation'
+    | '/faq'
+    | '/how-it-works'
+    | '/privacy'
+    | '/safety'
+    | '/terms'
+    | '/what-we-offer'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/how-it-works' | '/safety' | '/what-we-offer'
+  to:
+    | '/'
+    | '/about'
+    | '/become-a-care-partner'
+    | '/cancellation'
+    | '/faq'
+    | '/how-it-works'
+    | '/privacy'
+    | '/safety'
+    | '/terms'
+    | '/what-we-offer'
   id:
-    '__root__' | '/' | '/about' | '/how-it-works' | '/safety' | '/what-we-offer'
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/become-a-care-partner'
+    | '/cancellation'
+    | '/faq'
+    | '/how-it-works'
+    | '/privacy'
+    | '/safety'
+    | '/terms'
+    | '/what-we-offer'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  BecomeACarePartnerRoute: typeof BecomeACarePartnerRoute
+  CancellationRoute: typeof CancellationRoute
+  FaqRoute: typeof FaqRoute
   HowItWorksRoute: typeof HowItWorksRoute
+  PrivacyRoute: typeof PrivacyRoute
   SafetyRoute: typeof SafetyRoute
+  TermsRoute: typeof TermsRoute
   WhatWeOfferRoute: typeof WhatWeOfferRoute
 }
 
@@ -96,6 +176,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/become-a-care-partner': {
+      id: '/become-a-care-partner'
+      path: '/become-a-care-partner'
+      fullPath: '/become-a-care-partner'
+      preLoaderRoute: typeof BecomeACarePartnerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cancellation': {
+      id: '/cancellation'
+      path: '/cancellation'
+      fullPath: '/cancellation'
+      preLoaderRoute: typeof CancellationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/faq': {
+      id: '/faq'
+      path: '/faq'
+      fullPath: '/faq'
+      preLoaderRoute: typeof FaqRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/how-it-works': {
       id: '/how-it-works'
       path: '/how-it-works'
@@ -103,11 +204,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof HowItWorksRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/safety': {
       id: '/safety'
       path: '/safety'
       fullPath: '/safety'
       preLoaderRoute: typeof SafetyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/terms': {
+      id: '/terms'
+      path: '/terms'
+      fullPath: '/terms'
+      preLoaderRoute: typeof TermsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/what-we-offer': {
@@ -123,8 +238,13 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  BecomeACarePartnerRoute: BecomeACarePartnerRoute,
+  CancellationRoute: CancellationRoute,
+  FaqRoute: FaqRoute,
   HowItWorksRoute: HowItWorksRoute,
+  PrivacyRoute: PrivacyRoute,
   SafetyRoute: SafetyRoute,
+  TermsRoute: TermsRoute,
   WhatWeOfferRoute: WhatWeOfferRoute,
 }
 export const routeTree = rootRouteImport
