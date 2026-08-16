@@ -10,33 +10,506 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/route'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as AuthRouteImport } from './routes/auth'
+import { Route as BecomeACarePartnerRouteImport } from './routes/become-a-care-partner'
+import { Route as CancellationRouteImport } from './routes/cancellation'
+import { Route as FaqRouteImport } from './routes/faq'
+import { Route as HowItWorksRouteImport } from './routes/how-it-works'
+import { Route as PrivacyRouteImport } from './routes/privacy'
+import { Route as ResetPasswordRouteImport } from './routes/reset-password'
+import { Route as SafetyRouteImport } from './routes/safety'
+import { Route as TermsRouteImport } from './routes/terms'
+import { Route as WhatWeOfferRouteImport } from './routes/what-we-offer'
+import { Route as AuthenticatedBookRouteImport } from './routes/_authenticated/book'
+import { Route as AuthenticatedDashboardRouteImport } from './routes/_authenticated/dashboard'
+import { Route as AuthenticatedNotificationsRouteImport } from './routes/_authenticated/notifications'
+import { Route as AuthenticatedProfileRouteImport } from './routes/_authenticated/profile'
+import { Route as CarePartnersIndexRouteImport } from './routes/care-partners.index'
+import { Route as CarePartnersIdRouteImport } from './routes/care-partners.$id'
+import { Route as AuthenticatedAdminIndexRouteImport } from './routes/_authenticated/admin.index'
+import { Route as AuthenticatedAdminApplicationsRouteImport } from './routes/_authenticated/admin.applications'
+import { Route as AuthenticatedAdminBookingsRouteImport } from './routes/_authenticated/admin.bookings'
+import { Route as AuthenticatedAdminCarePartnersRouteImport } from './routes/_authenticated/admin.care-partners'
+import { Route as AuthenticatedAdminComplaintsRouteImport } from './routes/_authenticated/admin.complaints'
+import { Route as AuthenticatedAdminPricingRouteImport } from './routes/_authenticated/admin.pricing'
+import { Route as AuthenticatedAdminReviewsRouteImport } from './routes/_authenticated/admin.reviews'
+import { Route as AuthenticatedAdminTasksRouteImport } from './routes/_authenticated/admin.tasks'
+import { Route as AuthenticatedAdminTrainingRouteImport } from './routes/_authenticated/admin.training'
+import { Route as AuthenticatedAdminUsersRouteImport } from './routes/_authenticated/admin.users'
+import { Route as AuthenticatedAdminVerificationRouteImport } from './routes/_authenticated/admin.verification'
+import { Route as AuthenticatedBookingsIndexRouteImport } from './routes/_authenticated/bookings.index'
+import { Route as AuthenticatedBookingsIdRouteImport } from './routes/_authenticated/bookings.$id'
+import { Route as AuthenticatedPartnerIndexRouteImport } from './routes/_authenticated/partner.index'
+import { Route as AuthenticatedPartnerApplicationRouteImport } from './routes/_authenticated/partner.application'
+import { Route as AuthenticatedPartnerAvailabilityRouteImport } from './routes/_authenticated/partner.availability'
+import { Route as AuthenticatedPartnerBookingsRouteImport } from './routes/_authenticated/partner.bookings'
+import { Route as AuthenticatedPartnerEarningsRouteImport } from './routes/_authenticated/partner.earnings'
+import { Route as AuthenticatedPartnerTrainingRouteImport } from './routes/_authenticated/partner.training'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AuthenticatedRouteRoute = AuthenticatedRouteRouteImport.update({
+  id: '/_authenticated',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthRoute = AuthRouteImport.update({
+  id: '/auth',
+  path: '/auth',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BecomeACarePartnerRoute = BecomeACarePartnerRouteImport.update({
+  id: '/become-a-care-partner',
+  path: '/become-a-care-partner',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CancellationRoute = CancellationRouteImport.update({
+  id: '/cancellation',
+  path: '/cancellation',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FaqRoute = FaqRouteImport.update({
+  id: '/faq',
+  path: '/faq',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HowItWorksRoute = HowItWorksRouteImport.update({
+  id: '/how-it-works',
+  path: '/how-it-works',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ResetPasswordRoute = ResetPasswordRouteImport.update({
+  id: '/reset-password',
+  path: '/reset-password',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SafetyRoute = SafetyRouteImport.update({
+  id: '/safety',
+  path: '/safety',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TermsRoute = TermsRouteImport.update({
+  id: '/terms',
+  path: '/terms',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WhatWeOfferRoute = WhatWeOfferRouteImport.update({
+  id: '/what-we-offer',
+  path: '/what-we-offer',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthenticatedBookRoute = AuthenticatedBookRouteImport.update({
+  id: '/book',
+  path: '/book',
+  getParentRoute: () => AuthenticatedRouteRoute,
+} as any)
+const AuthenticatedDashboardRoute = AuthenticatedDashboardRouteImport.update({
+  id: '/dashboard',
+  path: '/dashboard',
+  getParentRoute: () => AuthenticatedRouteRoute,
+} as any)
+const AuthenticatedNotificationsRoute =
+  AuthenticatedNotificationsRouteImport.update({
+    id: '/notifications',
+    path: '/notifications',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
+const AuthenticatedProfileRoute = AuthenticatedProfileRouteImport.update({
+  id: '/profile',
+  path: '/profile',
+  getParentRoute: () => AuthenticatedRouteRoute,
+} as any)
+const CarePartnersIndexRoute = CarePartnersIndexRouteImport.update({
+  id: '/care-partners/',
+  path: '/care-partners/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CarePartnersIdRoute = CarePartnersIdRouteImport.update({
+  id: '/care-partners/$id',
+  path: '/care-partners/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthenticatedAdminIndexRoute = AuthenticatedAdminIndexRouteImport.update({
+  id: '/admin/',
+  path: '/admin/',
+  getParentRoute: () => AuthenticatedRouteRoute,
+} as any)
+const AuthenticatedAdminApplicationsRoute =
+  AuthenticatedAdminApplicationsRouteImport.update({
+    id: '/admin/applications',
+    path: '/admin/applications',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
+const AuthenticatedAdminBookingsRoute =
+  AuthenticatedAdminBookingsRouteImport.update({
+    id: '/admin/bookings',
+    path: '/admin/bookings',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
+const AuthenticatedAdminCarePartnersRoute =
+  AuthenticatedAdminCarePartnersRouteImport.update({
+    id: '/admin/care-partners',
+    path: '/admin/care-partners',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
+const AuthenticatedAdminComplaintsRoute =
+  AuthenticatedAdminComplaintsRouteImport.update({
+    id: '/admin/complaints',
+    path: '/admin/complaints',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
+const AuthenticatedAdminPricingRoute =
+  AuthenticatedAdminPricingRouteImport.update({
+    id: '/admin/pricing',
+    path: '/admin/pricing',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
+const AuthenticatedAdminReviewsRoute =
+  AuthenticatedAdminReviewsRouteImport.update({
+    id: '/admin/reviews',
+    path: '/admin/reviews',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
+const AuthenticatedAdminTasksRoute = AuthenticatedAdminTasksRouteImport.update({
+  id: '/admin/tasks',
+  path: '/admin/tasks',
+  getParentRoute: () => AuthenticatedRouteRoute,
+} as any)
+const AuthenticatedAdminTrainingRoute =
+  AuthenticatedAdminTrainingRouteImport.update({
+    id: '/admin/training',
+    path: '/admin/training',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
+const AuthenticatedAdminUsersRoute = AuthenticatedAdminUsersRouteImport.update({
+  id: '/admin/users',
+  path: '/admin/users',
+  getParentRoute: () => AuthenticatedRouteRoute,
+} as any)
+const AuthenticatedAdminVerificationRoute =
+  AuthenticatedAdminVerificationRouteImport.update({
+    id: '/admin/verification',
+    path: '/admin/verification',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
+const AuthenticatedBookingsIndexRoute =
+  AuthenticatedBookingsIndexRouteImport.update({
+    id: '/bookings/',
+    path: '/bookings/',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
+const AuthenticatedBookingsIdRoute = AuthenticatedBookingsIdRouteImport.update({
+  id: '/bookings/$id',
+  path: '/bookings/$id',
+  getParentRoute: () => AuthenticatedRouteRoute,
+} as any)
+const AuthenticatedPartnerIndexRoute =
+  AuthenticatedPartnerIndexRouteImport.update({
+    id: '/partner/',
+    path: '/partner/',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
+const AuthenticatedPartnerApplicationRoute =
+  AuthenticatedPartnerApplicationRouteImport.update({
+    id: '/partner/application',
+    path: '/partner/application',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
+const AuthenticatedPartnerAvailabilityRoute =
+  AuthenticatedPartnerAvailabilityRouteImport.update({
+    id: '/partner/availability',
+    path: '/partner/availability',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
+const AuthenticatedPartnerBookingsRoute =
+  AuthenticatedPartnerBookingsRouteImport.update({
+    id: '/partner/bookings',
+    path: '/partner/bookings',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
+const AuthenticatedPartnerEarningsRoute =
+  AuthenticatedPartnerEarningsRouteImport.update({
+    id: '/partner/earnings',
+    path: '/partner/earnings',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
+const AuthenticatedPartnerTrainingRoute =
+  AuthenticatedPartnerTrainingRouteImport.update({
+    id: '/partner/training',
+    path: '/partner/training',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/auth': typeof AuthRoute
+  '/become-a-care-partner': typeof BecomeACarePartnerRoute
+  '/cancellation': typeof CancellationRoute
+  '/faq': typeof FaqRoute
+  '/how-it-works': typeof HowItWorksRoute
+  '/privacy': typeof PrivacyRoute
+  '/reset-password': typeof ResetPasswordRoute
+  '/safety': typeof SafetyRoute
+  '/terms': typeof TermsRoute
+  '/what-we-offer': typeof WhatWeOfferRoute
+  '/book': typeof AuthenticatedBookRoute
+  '/dashboard': typeof AuthenticatedDashboardRoute
+  '/notifications': typeof AuthenticatedNotificationsRoute
+  '/profile': typeof AuthenticatedProfileRoute
+  '/care-partners/$id': typeof CarePartnersIdRoute
+  '/care-partners/': typeof CarePartnersIndexRoute
+  '/admin/applications': typeof AuthenticatedAdminApplicationsRoute
+  '/admin/bookings': typeof AuthenticatedAdminBookingsRoute
+  '/admin/care-partners': typeof AuthenticatedAdminCarePartnersRoute
+  '/admin/complaints': typeof AuthenticatedAdminComplaintsRoute
+  '/admin/pricing': typeof AuthenticatedAdminPricingRoute
+  '/admin/reviews': typeof AuthenticatedAdminReviewsRoute
+  '/admin/tasks': typeof AuthenticatedAdminTasksRoute
+  '/admin/training': typeof AuthenticatedAdminTrainingRoute
+  '/admin/users': typeof AuthenticatedAdminUsersRoute
+  '/admin/verification': typeof AuthenticatedAdminVerificationRoute
+  '/bookings/$id': typeof AuthenticatedBookingsIdRoute
+  '/partner/application': typeof AuthenticatedPartnerApplicationRoute
+  '/partner/availability': typeof AuthenticatedPartnerAvailabilityRoute
+  '/partner/bookings': typeof AuthenticatedPartnerBookingsRoute
+  '/partner/earnings': typeof AuthenticatedPartnerEarningsRoute
+  '/partner/training': typeof AuthenticatedPartnerTrainingRoute
+  '/admin/': typeof AuthenticatedAdminIndexRoute
+  '/bookings/': typeof AuthenticatedBookingsIndexRoute
+  '/partner/': typeof AuthenticatedPartnerIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/auth': typeof AuthRoute
+  '/become-a-care-partner': typeof BecomeACarePartnerRoute
+  '/cancellation': typeof CancellationRoute
+  '/faq': typeof FaqRoute
+  '/how-it-works': typeof HowItWorksRoute
+  '/privacy': typeof PrivacyRoute
+  '/reset-password': typeof ResetPasswordRoute
+  '/safety': typeof SafetyRoute
+  '/terms': typeof TermsRoute
+  '/what-we-offer': typeof WhatWeOfferRoute
+  '/book': typeof AuthenticatedBookRoute
+  '/dashboard': typeof AuthenticatedDashboardRoute
+  '/notifications': typeof AuthenticatedNotificationsRoute
+  '/profile': typeof AuthenticatedProfileRoute
+  '/care-partners/$id': typeof CarePartnersIdRoute
+  '/care-partners': typeof CarePartnersIndexRoute
+  '/admin/applications': typeof AuthenticatedAdminApplicationsRoute
+  '/admin/bookings': typeof AuthenticatedAdminBookingsRoute
+  '/admin/care-partners': typeof AuthenticatedAdminCarePartnersRoute
+  '/admin/complaints': typeof AuthenticatedAdminComplaintsRoute
+  '/admin/pricing': typeof AuthenticatedAdminPricingRoute
+  '/admin/reviews': typeof AuthenticatedAdminReviewsRoute
+  '/admin/tasks': typeof AuthenticatedAdminTasksRoute
+  '/admin/training': typeof AuthenticatedAdminTrainingRoute
+  '/admin/users': typeof AuthenticatedAdminUsersRoute
+  '/admin/verification': typeof AuthenticatedAdminVerificationRoute
+  '/bookings/$id': typeof AuthenticatedBookingsIdRoute
+  '/partner/application': typeof AuthenticatedPartnerApplicationRoute
+  '/partner/availability': typeof AuthenticatedPartnerAvailabilityRoute
+  '/partner/bookings': typeof AuthenticatedPartnerBookingsRoute
+  '/partner/earnings': typeof AuthenticatedPartnerEarningsRoute
+  '/partner/training': typeof AuthenticatedPartnerTrainingRoute
+  '/admin': typeof AuthenticatedAdminIndexRoute
+  '/bookings': typeof AuthenticatedBookingsIndexRoute
+  '/partner': typeof AuthenticatedPartnerIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/_authenticated': typeof AuthenticatedRouteRouteWithChildren
+  '/about': typeof AboutRoute
+  '/auth': typeof AuthRoute
+  '/become-a-care-partner': typeof BecomeACarePartnerRoute
+  '/cancellation': typeof CancellationRoute
+  '/faq': typeof FaqRoute
+  '/how-it-works': typeof HowItWorksRoute
+  '/privacy': typeof PrivacyRoute
+  '/reset-password': typeof ResetPasswordRoute
+  '/safety': typeof SafetyRoute
+  '/terms': typeof TermsRoute
+  '/what-we-offer': typeof WhatWeOfferRoute
+  '/_authenticated/book': typeof AuthenticatedBookRoute
+  '/_authenticated/dashboard': typeof AuthenticatedDashboardRoute
+  '/_authenticated/notifications': typeof AuthenticatedNotificationsRoute
+  '/_authenticated/profile': typeof AuthenticatedProfileRoute
+  '/care-partners/$id': typeof CarePartnersIdRoute
+  '/care-partners/': typeof CarePartnersIndexRoute
+  '/_authenticated/admin/applications': typeof AuthenticatedAdminApplicationsRoute
+  '/_authenticated/admin/bookings': typeof AuthenticatedAdminBookingsRoute
+  '/_authenticated/admin/care-partners': typeof AuthenticatedAdminCarePartnersRoute
+  '/_authenticated/admin/complaints': typeof AuthenticatedAdminComplaintsRoute
+  '/_authenticated/admin/pricing': typeof AuthenticatedAdminPricingRoute
+  '/_authenticated/admin/reviews': typeof AuthenticatedAdminReviewsRoute
+  '/_authenticated/admin/tasks': typeof AuthenticatedAdminTasksRoute
+  '/_authenticated/admin/training': typeof AuthenticatedAdminTrainingRoute
+  '/_authenticated/admin/users': typeof AuthenticatedAdminUsersRoute
+  '/_authenticated/admin/verification': typeof AuthenticatedAdminVerificationRoute
+  '/_authenticated/bookings/$id': typeof AuthenticatedBookingsIdRoute
+  '/_authenticated/partner/application': typeof AuthenticatedPartnerApplicationRoute
+  '/_authenticated/partner/availability': typeof AuthenticatedPartnerAvailabilityRoute
+  '/_authenticated/partner/bookings': typeof AuthenticatedPartnerBookingsRoute
+  '/_authenticated/partner/earnings': typeof AuthenticatedPartnerEarningsRoute
+  '/_authenticated/partner/training': typeof AuthenticatedPartnerTrainingRoute
+  '/_authenticated/admin/': typeof AuthenticatedAdminIndexRoute
+  '/_authenticated/bookings/': typeof AuthenticatedBookingsIndexRoute
+  '/_authenticated/partner/': typeof AuthenticatedPartnerIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/auth'
+    | '/become-a-care-partner'
+    | '/cancellation'
+    | '/faq'
+    | '/how-it-works'
+    | '/privacy'
+    | '/reset-password'
+    | '/safety'
+    | '/terms'
+    | '/what-we-offer'
+    | '/book'
+    | '/dashboard'
+    | '/notifications'
+    | '/profile'
+    | '/care-partners/$id'
+    | '/care-partners/'
+    | '/admin/applications'
+    | '/admin/bookings'
+    | '/admin/care-partners'
+    | '/admin/complaints'
+    | '/admin/pricing'
+    | '/admin/reviews'
+    | '/admin/tasks'
+    | '/admin/training'
+    | '/admin/users'
+    | '/admin/verification'
+    | '/bookings/$id'
+    | '/partner/application'
+    | '/partner/availability'
+    | '/partner/bookings'
+    | '/partner/earnings'
+    | '/partner/training'
+    | '/admin/'
+    | '/bookings/'
+    | '/partner/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about'
+    | '/auth'
+    | '/become-a-care-partner'
+    | '/cancellation'
+    | '/faq'
+    | '/how-it-works'
+    | '/privacy'
+    | '/reset-password'
+    | '/safety'
+    | '/terms'
+    | '/what-we-offer'
+    | '/book'
+    | '/dashboard'
+    | '/notifications'
+    | '/profile'
+    | '/care-partners/$id'
+    | '/care-partners'
+    | '/admin/applications'
+    | '/admin/bookings'
+    | '/admin/care-partners'
+    | '/admin/complaints'
+    | '/admin/pricing'
+    | '/admin/reviews'
+    | '/admin/tasks'
+    | '/admin/training'
+    | '/admin/users'
+    | '/admin/verification'
+    | '/bookings/$id'
+    | '/partner/application'
+    | '/partner/availability'
+    | '/partner/bookings'
+    | '/partner/earnings'
+    | '/partner/training'
+    | '/admin'
+    | '/bookings'
+    | '/partner'
+  id:
+    | '__root__'
+    | '/'
+    | '/_authenticated'
+    | '/about'
+    | '/auth'
+    | '/become-a-care-partner'
+    | '/cancellation'
+    | '/faq'
+    | '/how-it-works'
+    | '/privacy'
+    | '/reset-password'
+    | '/safety'
+    | '/terms'
+    | '/what-we-offer'
+    | '/_authenticated/book'
+    | '/_authenticated/dashboard'
+    | '/_authenticated/notifications'
+    | '/_authenticated/profile'
+    | '/care-partners/$id'
+    | '/care-partners/'
+    | '/_authenticated/admin/applications'
+    | '/_authenticated/admin/bookings'
+    | '/_authenticated/admin/care-partners'
+    | '/_authenticated/admin/complaints'
+    | '/_authenticated/admin/pricing'
+    | '/_authenticated/admin/reviews'
+    | '/_authenticated/admin/tasks'
+    | '/_authenticated/admin/training'
+    | '/_authenticated/admin/users'
+    | '/_authenticated/admin/verification'
+    | '/_authenticated/bookings/$id'
+    | '/_authenticated/partner/application'
+    | '/_authenticated/partner/availability'
+    | '/_authenticated/partner/bookings'
+    | '/_authenticated/partner/earnings'
+    | '/_authenticated/partner/training'
+    | '/_authenticated/admin/'
+    | '/_authenticated/bookings/'
+    | '/_authenticated/partner/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AuthenticatedRouteRoute: typeof AuthenticatedRouteRouteWithChildren
+  AboutRoute: typeof AboutRoute
+  AuthRoute: typeof AuthRoute
+  BecomeACarePartnerRoute: typeof BecomeACarePartnerRoute
+  CancellationRoute: typeof CancellationRoute
+  FaqRoute: typeof FaqRoute
+  HowItWorksRoute: typeof HowItWorksRoute
+  PrivacyRoute: typeof PrivacyRoute
+  ResetPasswordRoute: typeof ResetPasswordRoute
+  SafetyRoute: typeof SafetyRoute
+  TermsRoute: typeof TermsRoute
+  WhatWeOfferRoute: typeof WhatWeOfferRoute
+  CarePartnersIdRoute: typeof CarePartnersIdRoute
+  CarePartnersIndexRoute: typeof CarePartnersIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +521,339 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/_authenticated': {
+      id: '/_authenticated'
+      path: ''
+      fullPath: '/'
+      preLoaderRoute: typeof AuthenticatedRouteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/auth': {
+      id: '/auth'
+      path: '/auth'
+      fullPath: '/auth'
+      preLoaderRoute: typeof AuthRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/become-a-care-partner': {
+      id: '/become-a-care-partner'
+      path: '/become-a-care-partner'
+      fullPath: '/become-a-care-partner'
+      preLoaderRoute: typeof BecomeACarePartnerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cancellation': {
+      id: '/cancellation'
+      path: '/cancellation'
+      fullPath: '/cancellation'
+      preLoaderRoute: typeof CancellationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/faq': {
+      id: '/faq'
+      path: '/faq'
+      fullPath: '/faq'
+      preLoaderRoute: typeof FaqRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/how-it-works': {
+      id: '/how-it-works'
+      path: '/how-it-works'
+      fullPath: '/how-it-works'
+      preLoaderRoute: typeof HowItWorksRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/reset-password': {
+      id: '/reset-password'
+      path: '/reset-password'
+      fullPath: '/reset-password'
+      preLoaderRoute: typeof ResetPasswordRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/safety': {
+      id: '/safety'
+      path: '/safety'
+      fullPath: '/safety'
+      preLoaderRoute: typeof SafetyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/terms': {
+      id: '/terms'
+      path: '/terms'
+      fullPath: '/terms'
+      preLoaderRoute: typeof TermsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/what-we-offer': {
+      id: '/what-we-offer'
+      path: '/what-we-offer'
+      fullPath: '/what-we-offer'
+      preLoaderRoute: typeof WhatWeOfferRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/_authenticated/book': {
+      id: '/_authenticated/book'
+      path: '/book'
+      fullPath: '/book'
+      preLoaderRoute: typeof AuthenticatedBookRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/dashboard': {
+      id: '/_authenticated/dashboard'
+      path: '/dashboard'
+      fullPath: '/dashboard'
+      preLoaderRoute: typeof AuthenticatedDashboardRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/notifications': {
+      id: '/_authenticated/notifications'
+      path: '/notifications'
+      fullPath: '/notifications'
+      preLoaderRoute: typeof AuthenticatedNotificationsRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/profile': {
+      id: '/_authenticated/profile'
+      path: '/profile'
+      fullPath: '/profile'
+      preLoaderRoute: typeof AuthenticatedProfileRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/care-partners/': {
+      id: '/care-partners/'
+      path: '/care-partners'
+      fullPath: '/care-partners/'
+      preLoaderRoute: typeof CarePartnersIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/care-partners/$id': {
+      id: '/care-partners/$id'
+      path: '/care-partners/$id'
+      fullPath: '/care-partners/$id'
+      preLoaderRoute: typeof CarePartnersIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/_authenticated/admin/': {
+      id: '/_authenticated/admin/'
+      path: '/admin'
+      fullPath: '/admin/'
+      preLoaderRoute: typeof AuthenticatedAdminIndexRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/admin/applications': {
+      id: '/_authenticated/admin/applications'
+      path: '/admin/applications'
+      fullPath: '/admin/applications'
+      preLoaderRoute: typeof AuthenticatedAdminApplicationsRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/admin/bookings': {
+      id: '/_authenticated/admin/bookings'
+      path: '/admin/bookings'
+      fullPath: '/admin/bookings'
+      preLoaderRoute: typeof AuthenticatedAdminBookingsRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/admin/care-partners': {
+      id: '/_authenticated/admin/care-partners'
+      path: '/admin/care-partners'
+      fullPath: '/admin/care-partners'
+      preLoaderRoute: typeof AuthenticatedAdminCarePartnersRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/admin/complaints': {
+      id: '/_authenticated/admin/complaints'
+      path: '/admin/complaints'
+      fullPath: '/admin/complaints'
+      preLoaderRoute: typeof AuthenticatedAdminComplaintsRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/admin/pricing': {
+      id: '/_authenticated/admin/pricing'
+      path: '/admin/pricing'
+      fullPath: '/admin/pricing'
+      preLoaderRoute: typeof AuthenticatedAdminPricingRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/admin/reviews': {
+      id: '/_authenticated/admin/reviews'
+      path: '/admin/reviews'
+      fullPath: '/admin/reviews'
+      preLoaderRoute: typeof AuthenticatedAdminReviewsRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/admin/tasks': {
+      id: '/_authenticated/admin/tasks'
+      path: '/admin/tasks'
+      fullPath: '/admin/tasks'
+      preLoaderRoute: typeof AuthenticatedAdminTasksRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/admin/training': {
+      id: '/_authenticated/admin/training'
+      path: '/admin/training'
+      fullPath: '/admin/training'
+      preLoaderRoute: typeof AuthenticatedAdminTrainingRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/admin/users': {
+      id: '/_authenticated/admin/users'
+      path: '/admin/users'
+      fullPath: '/admin/users'
+      preLoaderRoute: typeof AuthenticatedAdminUsersRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/admin/verification': {
+      id: '/_authenticated/admin/verification'
+      path: '/admin/verification'
+      fullPath: '/admin/verification'
+      preLoaderRoute: typeof AuthenticatedAdminVerificationRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/bookings/': {
+      id: '/_authenticated/bookings/'
+      path: '/bookings'
+      fullPath: '/bookings/'
+      preLoaderRoute: typeof AuthenticatedBookingsIndexRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/bookings/$id': {
+      id: '/_authenticated/bookings/$id'
+      path: '/bookings/$id'
+      fullPath: '/bookings/$id'
+      preLoaderRoute: typeof AuthenticatedBookingsIdRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/partner/': {
+      id: '/_authenticated/partner/'
+      path: '/partner'
+      fullPath: '/partner/'
+      preLoaderRoute: typeof AuthenticatedPartnerIndexRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/partner/application': {
+      id: '/_authenticated/partner/application'
+      path: '/partner/application'
+      fullPath: '/partner/application'
+      preLoaderRoute: typeof AuthenticatedPartnerApplicationRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/partner/availability': {
+      id: '/_authenticated/partner/availability'
+      path: '/partner/availability'
+      fullPath: '/partner/availability'
+      preLoaderRoute: typeof AuthenticatedPartnerAvailabilityRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/partner/bookings': {
+      id: '/_authenticated/partner/bookings'
+      path: '/partner/bookings'
+      fullPath: '/partner/bookings'
+      preLoaderRoute: typeof AuthenticatedPartnerBookingsRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/partner/earnings': {
+      id: '/_authenticated/partner/earnings'
+      path: '/partner/earnings'
+      fullPath: '/partner/earnings'
+      preLoaderRoute: typeof AuthenticatedPartnerEarningsRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/partner/training': {
+      id: '/_authenticated/partner/training'
+      path: '/partner/training'
+      fullPath: '/partner/training'
+      preLoaderRoute: typeof AuthenticatedPartnerTrainingRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
   }
 }
 
+interface AuthenticatedRouteRouteChildren {
+  AuthenticatedBookRoute: typeof AuthenticatedBookRoute
+  AuthenticatedDashboardRoute: typeof AuthenticatedDashboardRoute
+  AuthenticatedNotificationsRoute: typeof AuthenticatedNotificationsRoute
+  AuthenticatedProfileRoute: typeof AuthenticatedProfileRoute
+  AuthenticatedAdminApplicationsRoute: typeof AuthenticatedAdminApplicationsRoute
+  AuthenticatedAdminBookingsRoute: typeof AuthenticatedAdminBookingsRoute
+  AuthenticatedAdminCarePartnersRoute: typeof AuthenticatedAdminCarePartnersRoute
+  AuthenticatedAdminComplaintsRoute: typeof AuthenticatedAdminComplaintsRoute
+  AuthenticatedAdminPricingRoute: typeof AuthenticatedAdminPricingRoute
+  AuthenticatedAdminReviewsRoute: typeof AuthenticatedAdminReviewsRoute
+  AuthenticatedAdminTasksRoute: typeof AuthenticatedAdminTasksRoute
+  AuthenticatedAdminTrainingRoute: typeof AuthenticatedAdminTrainingRoute
+  AuthenticatedAdminUsersRoute: typeof AuthenticatedAdminUsersRoute
+  AuthenticatedAdminVerificationRoute: typeof AuthenticatedAdminVerificationRoute
+  AuthenticatedBookingsIdRoute: typeof AuthenticatedBookingsIdRoute
+  AuthenticatedPartnerApplicationRoute: typeof AuthenticatedPartnerApplicationRoute
+  AuthenticatedPartnerAvailabilityRoute: typeof AuthenticatedPartnerAvailabilityRoute
+  AuthenticatedPartnerBookingsRoute: typeof AuthenticatedPartnerBookingsRoute
+  AuthenticatedPartnerEarningsRoute: typeof AuthenticatedPartnerEarningsRoute
+  AuthenticatedPartnerTrainingRoute: typeof AuthenticatedPartnerTrainingRoute
+  AuthenticatedAdminIndexRoute: typeof AuthenticatedAdminIndexRoute
+  AuthenticatedBookingsIndexRoute: typeof AuthenticatedBookingsIndexRoute
+  AuthenticatedPartnerIndexRoute: typeof AuthenticatedPartnerIndexRoute
+}
+
+const AuthenticatedRouteRouteChildren: AuthenticatedRouteRouteChildren = {
+  AuthenticatedBookRoute: AuthenticatedBookRoute,
+  AuthenticatedDashboardRoute: AuthenticatedDashboardRoute,
+  AuthenticatedNotificationsRoute: AuthenticatedNotificationsRoute,
+  AuthenticatedProfileRoute: AuthenticatedProfileRoute,
+  AuthenticatedAdminApplicationsRoute: AuthenticatedAdminApplicationsRoute,
+  AuthenticatedAdminBookingsRoute: AuthenticatedAdminBookingsRoute,
+  AuthenticatedAdminCarePartnersRoute: AuthenticatedAdminCarePartnersRoute,
+  AuthenticatedAdminComplaintsRoute: AuthenticatedAdminComplaintsRoute,
+  AuthenticatedAdminPricingRoute: AuthenticatedAdminPricingRoute,
+  AuthenticatedAdminReviewsRoute: AuthenticatedAdminReviewsRoute,
+  AuthenticatedAdminTasksRoute: AuthenticatedAdminTasksRoute,
+  AuthenticatedAdminTrainingRoute: AuthenticatedAdminTrainingRoute,
+  AuthenticatedAdminUsersRoute: AuthenticatedAdminUsersRoute,
+  AuthenticatedAdminVerificationRoute: AuthenticatedAdminVerificationRoute,
+  AuthenticatedBookingsIdRoute: AuthenticatedBookingsIdRoute,
+  AuthenticatedPartnerApplicationRoute: AuthenticatedPartnerApplicationRoute,
+  AuthenticatedPartnerAvailabilityRoute: AuthenticatedPartnerAvailabilityRoute,
+  AuthenticatedPartnerBookingsRoute: AuthenticatedPartnerBookingsRoute,
+  AuthenticatedPartnerEarningsRoute: AuthenticatedPartnerEarningsRoute,
+  AuthenticatedPartnerTrainingRoute: AuthenticatedPartnerTrainingRoute,
+  AuthenticatedAdminIndexRoute: AuthenticatedAdminIndexRoute,
+  AuthenticatedBookingsIndexRoute: AuthenticatedBookingsIndexRoute,
+  AuthenticatedPartnerIndexRoute: AuthenticatedPartnerIndexRoute,
+}
+
+const AuthenticatedRouteRouteWithChildren =
+  AuthenticatedRouteRoute._addFileChildren(AuthenticatedRouteRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AuthenticatedRouteRoute: AuthenticatedRouteRouteWithChildren,
+  AboutRoute: AboutRoute,
+  AuthRoute: AuthRoute,
+  BecomeACarePartnerRoute: BecomeACarePartnerRoute,
+  CancellationRoute: CancellationRoute,
+  FaqRoute: FaqRoute,
+  HowItWorksRoute: HowItWorksRoute,
+  PrivacyRoute: PrivacyRoute,
+  ResetPasswordRoute: ResetPasswordRoute,
+  SafetyRoute: SafetyRoute,
+  TermsRoute: TermsRoute,
+  WhatWeOfferRoute: WhatWeOfferRoute,
+  CarePartnersIdRoute: CarePartnersIdRoute,
+  CarePartnersIndexRoute: CarePartnersIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
