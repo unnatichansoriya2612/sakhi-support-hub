@@ -11,11 +11,13 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
+import { Route as AuthRouteImport } from './routes/auth'
 import { Route as BecomeACarePartnerRouteImport } from './routes/become-a-care-partner'
 import { Route as CancellationRouteImport } from './routes/cancellation'
 import { Route as FaqRouteImport } from './routes/faq'
 import { Route as HowItWorksRouteImport } from './routes/how-it-works'
 import { Route as PrivacyRouteImport } from './routes/privacy'
+import { Route as ResetPasswordRouteImport } from './routes/reset-password'
 import { Route as SafetyRouteImport } from './routes/safety'
 import { Route as TermsRouteImport } from './routes/terms'
 import { Route as WhatWeOfferRouteImport } from './routes/what-we-offer'
@@ -28,6 +30,11 @@ const IndexRoute = IndexRouteImport.update({
 const AboutRoute = AboutRouteImport.update({
   id: '/about',
   path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthRoute = AuthRouteImport.update({
+  id: '/auth',
+  path: '/auth',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BecomeACarePartnerRoute = BecomeACarePartnerRouteImport.update({
@@ -55,6 +62,11 @@ const PrivacyRoute = PrivacyRouteImport.update({
   path: '/privacy',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ResetPasswordRoute = ResetPasswordRouteImport.update({
+  id: '/reset-password',
+  path: '/reset-password',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SafetyRoute = SafetyRouteImport.update({
   id: '/safety',
   path: '/safety',
@@ -74,11 +86,13 @@ const WhatWeOfferRoute = WhatWeOfferRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/auth': typeof AuthRoute
   '/become-a-care-partner': typeof BecomeACarePartnerRoute
   '/cancellation': typeof CancellationRoute
   '/faq': typeof FaqRoute
   '/how-it-works': typeof HowItWorksRoute
   '/privacy': typeof PrivacyRoute
+  '/reset-password': typeof ResetPasswordRoute
   '/safety': typeof SafetyRoute
   '/terms': typeof TermsRoute
   '/what-we-offer': typeof WhatWeOfferRoute
@@ -86,11 +100,13 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/auth': typeof AuthRoute
   '/become-a-care-partner': typeof BecomeACarePartnerRoute
   '/cancellation': typeof CancellationRoute
   '/faq': typeof FaqRoute
   '/how-it-works': typeof HowItWorksRoute
   '/privacy': typeof PrivacyRoute
+  '/reset-password': typeof ResetPasswordRoute
   '/safety': typeof SafetyRoute
   '/terms': typeof TermsRoute
   '/what-we-offer': typeof WhatWeOfferRoute
@@ -99,11 +115,13 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/auth': typeof AuthRoute
   '/become-a-care-partner': typeof BecomeACarePartnerRoute
   '/cancellation': typeof CancellationRoute
   '/faq': typeof FaqRoute
   '/how-it-works': typeof HowItWorksRoute
   '/privacy': typeof PrivacyRoute
+  '/reset-password': typeof ResetPasswordRoute
   '/safety': typeof SafetyRoute
   '/terms': typeof TermsRoute
   '/what-we-offer': typeof WhatWeOfferRoute
@@ -113,11 +131,13 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/about'
+    | '/auth'
     | '/become-a-care-partner'
     | '/cancellation'
     | '/faq'
     | '/how-it-works'
     | '/privacy'
+    | '/reset-password'
     | '/safety'
     | '/terms'
     | '/what-we-offer'
@@ -125,11 +145,13 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/about'
+    | '/auth'
     | '/become-a-care-partner'
     | '/cancellation'
     | '/faq'
     | '/how-it-works'
     | '/privacy'
+    | '/reset-password'
     | '/safety'
     | '/terms'
     | '/what-we-offer'
@@ -137,11 +159,13 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/about'
+    | '/auth'
     | '/become-a-care-partner'
     | '/cancellation'
     | '/faq'
     | '/how-it-works'
     | '/privacy'
+    | '/reset-password'
     | '/safety'
     | '/terms'
     | '/what-we-offer'
@@ -150,11 +174,13 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  AuthRoute: typeof AuthRoute
   BecomeACarePartnerRoute: typeof BecomeACarePartnerRoute
   CancellationRoute: typeof CancellationRoute
   FaqRoute: typeof FaqRoute
   HowItWorksRoute: typeof HowItWorksRoute
   PrivacyRoute: typeof PrivacyRoute
+  ResetPasswordRoute: typeof ResetPasswordRoute
   SafetyRoute: typeof SafetyRoute
   TermsRoute: typeof TermsRoute
   WhatWeOfferRoute: typeof WhatWeOfferRoute
@@ -174,6 +200,13 @@ declare module '@tanstack/react-router' {
       path: '/about'
       fullPath: '/about'
       preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/auth': {
+      id: '/auth'
+      path: '/auth'
+      fullPath: '/auth'
+      preLoaderRoute: typeof AuthRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/become-a-care-partner': {
@@ -211,6 +244,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PrivacyRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/reset-password': {
+      id: '/reset-password'
+      path: '/reset-password'
+      fullPath: '/reset-password'
+      preLoaderRoute: typeof ResetPasswordRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/safety': {
       id: '/safety'
       path: '/safety'
@@ -238,11 +278,13 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  AuthRoute: AuthRoute,
   BecomeACarePartnerRoute: BecomeACarePartnerRoute,
   CancellationRoute: CancellationRoute,
   FaqRoute: FaqRoute,
   HowItWorksRoute: HowItWorksRoute,
   PrivacyRoute: PrivacyRoute,
+  ResetPasswordRoute: ResetPasswordRoute,
   SafetyRoute: SafetyRoute,
   TermsRoute: TermsRoute,
   WhatWeOfferRoute: WhatWeOfferRoute,
