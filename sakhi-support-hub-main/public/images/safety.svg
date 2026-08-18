@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-label="Placeholder image">
+  <defs>
+    <linearGradient id="gsafety" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f6e7d3"/>
+      <stop offset="55%" stop-color="#efd3bd"/>
+      <stop offset="100%" stop-color="#e3b7a4"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#gsafety)"/>
+  <circle cx="640" cy="130" r="70" fill="#ffffff" opacity="0.35"/>
+  <circle cx="150" cy="480" r="110" fill="#ffffff" opacity="0.22"/>
+  <path d="M0 470 Q200 380 400 450 T800 420 L800 600 L0 600 Z" fill="#ffffff" opacity="0.28"/>
+  <rect x="60" y="60" width="680" height="480" rx="28" fill="none" stroke="#b4796a" stroke-opacity="0.35" stroke-width="2" stroke-dasharray="10 10"/>
+</svg>
